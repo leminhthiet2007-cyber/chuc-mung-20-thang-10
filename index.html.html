@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f6">
+<title>Happy 20/10 🌷</title>
+<style>
+  :root{
+    --pink:#ff8fb1; --pink-dark:#d94f83; --cream:#fffaf0; --lav:#dcd4ff;
+    --blue:#c9edff; --yellow:#ffe99a; --ink:#58384d; --white:#fff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; min-height:100vh; overflow-x:hidden; color:var(--ink);
+    font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+    background:
+      radial-gradient(circle at 12% 15%, #ffe0ec 0 8%, transparent 8.3%),
+      radial-gradient(circle at 88% 28%, #e4ddff 0 9%, transparent 9.3%),
+      linear-gradient(135deg,#fffaf1 0%,#fff0f6 48%,#eff9ff 100%);
+  }
+  button{font:inherit; cursor:pointer; -webkit-tap-highlight-color:transparent}
+  .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:1100px;margin:auto;padding:18px 20px}
+  .brand{font-weight:900;letter-spacing:.4px}
+  .pill{border:2px solid #f5bfd0;background:#ffffffc9;color:var(--ink);padding:10px 15px;border-radius:999px;box-shadow:0 4px 0 #f5c7d7;transition:.2s}
+  .pill:hover{transform:translateY(-2px)}
+  .hero{position:relative;max-width:1100px;margin:12px auto 0;padding:28px 20px 70px;text-align:center}
+  .eyebrow{display:inline-block;background:#fff;border:2px dashed #ffc0d4;border-radius:999px;padding:8px 15px;font-size:.9rem;transform:rotate(-2deg)}
+  h1{font-size:clamp(2.6rem,8vw,6rem);line-height:1.02;margin:24px 0 14px;letter-spacing:-2px;color:#a84976;text-shadow:3px 4px 0 #fff, 5px 7px 0 #ffd9e7}
+  h1 .date{color:#7a68bb;white-space:nowrap}
+  .subtitle{font-size:clamp(1rem,2.6vw,1.25rem);max-width:660px;margin:0 auto;line-height:1.7}
+  .hero-art{display:flex;align-items:center;justify-content:center;gap:12px;margin:25px auto 0;font-size:clamp(2.8rem,9vw,5.4rem);filter:drop-shadow(0 8px 0 #ffdce7)}
+  .flower{display:inline-block;animation:bob 2.8s ease-in-out infinite}
+  .flower:nth-child(2){animation-delay:.3s}.flower:nth-child(3){animation-delay:.6s}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-13px) rotate(6deg)}}
+  .sparkle{position:absolute;animation:twinkle 2s ease-in-out infinite}
+  .s1{top:20%;left:8%}.s2{top:32%;right:9%;animation-delay:.7s}.s3{bottom:18%;left:15%;animation-delay:1s}.s4{bottom:17%;right:15%;animation-delay:.4s}
+  @keyframes twinkle{0%,100%{opacity:.4;transform:scale(.8) rotate(0)}50%{opacity:1;transform:scale(1.2) rotate(20deg)}}
+  .section{max-width:1000px;margin:0 auto;padding:18px 20px 55px}
+  .card{background:#ffffffd9;border:3px solid #fff;outline:2px solid #f7c4d7;border-radius:30px;padding:clamp(20px,4vw,38px);box-shadow:0 12px 0 #f6d5e1,0 20px 35px #a65b7b12}
+  .card h2{font-size:clamp(1.5rem,4vw,2.2rem);margin:0 0 12px}
+  .card p{line-height:1.8;margin:0}
+  .game{margin-top:35px;background:linear-gradient(135deg,#fff7d8,#fff0f7 55%,#edf8ff);outline-color:#c8bfff}
+  .game-head{display:flex;gap:14px;align-items:center;margin-bottom:16px}
+  .game-icon{flex:none;width:62px;height:62px;border-radius:22px;display:grid;place-items:center;background:#fff;border:2px solid #f7c4d7;font-size:2rem;box-shadow:0 5px 0 #f7d6e2}
+  .game-head p{font-size:.98rem}
+  .question{font-size:clamp(1.2rem,3.2vw,1.7rem)!important;font-weight:900;line-height:1.45!important;margin:18px 0 24px!important}
+  .answers{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:14px;min-height:65px;position:relative}
+  .answer{border:0;border-radius:999px;padding:14px 24px;font-weight:900;box-shadow:0 6px 0 #00000012;transition:transform .18s,box-shadow .18s;min-width:150px}
+  .answer:active{transform:translateY(3px);box-shadow:0 2px 0 #00000012}
+  .yes{background:#b8edcf;color:#245b43}.no{background:#ffc5d7;color:#8b3555}
+  .answer:hover{transform:translateY(-3px) rotate(-1deg)}
+  .no.running{position:relative}
+  .result{margin:24px auto 0;padding:17px 20px;max-width:700px;border-radius:20px;background:#ffffffc9;border:2px dashed #d5c6ff;line-height:1.7;display:none;animation:pop .4s cubic-bezier(.2,.8,.2,1)}
+  .result.show{display:block}
+  @keyframes pop{from{opacity:0;transform:scale(.8) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+  .wishes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+  .wish{border:2px solid #fff;border-radius:24px;padding:22px 18px;background:#fff9;box-shadow:0 7px 0 #eadff7;transition:.25s}
+  .wish:hover{transform:translateY(-7px) rotate(-1deg)}
+  .wish .emoji{font-size:2.3rem}
+  .wish h3{margin:9px 0;font-size:1.1rem}
+  .wish p{font-size:.95rem;line-height:1.65}
+  .reveal-wrap{text-align:center;margin-top:34px}
+  .big-button{border:0;background:#a98ce8;color:white;padding:16px 24px;border-radius:999px;font-weight:900;box-shadow:0 7px 0 #8066c3;transition:.2s}
+  .big-button:hover{transform:translateY(-3px);box-shadow:0 10px 0 #8066c3}
+  .big-button:active{transform:translateY(3px);box-shadow:0 3px 0 #8066c3}
+  .secret{display:none;margin:22px auto 0;max-width:720px;padding:24px;border-radius:24px;background:#fff;border:2px dashed #ffabc6;line-height:1.8}
+  .secret.show{display:block;animation:pop .5s}
+  .footer{text-align:center;padding:15px 20px 40px;font-size:.9rem;opacity:.8}
+  .floating{position:fixed;top:-40px;z-index:10;pointer-events:none;animation:fall linear forwards;filter:drop-shadow(0 2px 2px #d46d8b22)}
+  @keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(520deg);opacity:.15}}
+  .confetti{position:fixed;z-index:50;top:-12px;width:9px;height:14px;border-radius:3px;pointer-events:none;animation:confettiFall 2.8s ease-in forwards}
+  @keyframes confettiFall{to{transform:translate(var(--x),110vh) rotate(780deg);opacity:.1}}
+  .toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,150%);background:#593c51;color:#fff;padding:13px 20px;border-radius:999px;box-shadow:0 8px 24px #4c2b4430;z-index:100;transition:transform .35s;max-width:calc(100% - 30px);text-align:center}
+  .toast.show{transform:translate(-50%,0)}
+  .music-note{display:inline-block;margin-right:5px}
+  @media(max-width:700px){
+    .topbar{padding:14px 14px}.brand{font-size:.9rem}.pill{padding:9px 12px;font-size:.9rem}
+    .hero{padding:25px 17px 45px}.s1{left:4%}.s2{right:4%}
+    .section{padding:12px 15px 42px}.wishes{grid-template-columns:1fr}.wish{display:grid;grid-template-columns:58px 1fr;column-gap:12px;align-items:center}.wish .emoji{grid-row:span 2}.wish h3{margin:0 0 4px}.wish p{margin:0}
+    .game-head{align-items:flex-start}.game-icon{width:50px;height:50px;border-radius:17px;font-size:1.6rem}
+    .answer{min-width:125px;padding:13px 18px}
+  }
+
+  .intro-screen{position:fixed;inset:0;z-index:200;background:linear-gradient(135deg,#fff0f6,#f0eaff 55%,#fff9df);display:grid;place-items:center;padding:22px;transition:opacity .7s,visibility .7s}
+  .intro-screen.closed{opacity:0;visibility:hidden;pointer-events:none}
+  .intro-box{text-align:center;max-width:520px;width:100%;padding:30px 22px}
+  .envelope{position:relative;width:min(290px,75vw);height:190px;margin:25px auto 28px;cursor:pointer;filter:drop-shadow(0 14px 15px #c76a9630);perspective:800px}
+  .env-back{position:absolute;inset:0;background:#ffb8cf;border-radius:15px}
+  .env-paper{position:absolute;left:10%;right:10%;bottom:12px;height:145px;background:#fffdf9;border-radius:12px;display:grid;place-items:center;font-size:3rem;transition:transform .8s cubic-bezier(.2,.8,.2,1);box-shadow:0 3px 10px #8c46651a}
+  .env-front{position:absolute;inset:0;background:#ff91b4;clip-path:polygon(0 0,50% 56%,100% 0,100% 100%,0 100%);border-radius:0 0 15px 15px}
+  .env-flap{position:absolute;inset:0;background:#ffc9da;clip-path:polygon(0 0,100% 0,50% 61%);transform-origin:top;transition:transform .65s ease;backface-visibility:hidden}
+  .envelope.open .env-flap{transform:rotateX(180deg)}
+  .envelope.open .env-paper{transform:translateY(-95px) rotate(-3deg)}
+  .intro-sticker{font-size:2rem;animation:bob 2s ease-in-out infinite}
+  .quiz-card{margin-top:35px;background:linear-gradient(135deg,#eff9ff,#f4efff 55%,#fff5d8);outline-color:#b9dfff}
+  .quiz-progress{height:10px;background:#ffffff;border-radius:99px;overflow:hidden;margin:18px 0 22px;border:1px solid #d8eaff}
+  .quiz-progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff9fbd,#a997ef);border-radius:99px;transition:width .35s}
+  .quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+  .quiz-option{background:#fff;border:2px solid #e1d8ff;border-radius:18px;padding:14px;color:var(--ink);font-weight:800;box-shadow:0 4px 0 #e8e1f8;transition:.2s}
+  .quiz-option:hover{transform:translateY(-3px);border-color:#ffacc8;background:#fff8fb}
+  .quiz-option:disabled{cursor:default;opacity:.8}
+  .quiz-feedback{margin-top:18px;padding:16px;border-radius:18px;background:#ffffffc9;border:2px dashed #cbbfff;line-height:1.7;display:none}
+  .quiz-feedback.show{display:block;animation:pop .35s}
+  .quiz-next{margin-top:14px}
+  @media(max-width:520px){.intro-box{padding:20px 8px}.envelope{height:165px}.env-paper{height:125px}.envelope.open .env-paper{transform:translateY(-75px) rotate(-3deg)}.quiz-options{grid-template-columns:1fr}}
+
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+
+<div class="intro-screen" id="introScreen">
+  <div class="intro-box">
+    <div class="intro-sticker">🌷 ✨ 💗</div>
+    <div class="eyebrow">Pssst... có một món quà dành cho bạn!</div>
+    <h2 style="font-size:clamp(1.8rem,6vw,2.8rem);margin:22px 0 5px;color:#a84976">Thư mời đặc biệt 💌</h2>
+    <p style="line-height:1.7">Chỉ mất vài giây thôi. Mở thư để nhận lời chúc 20/10 nha!</p>
+    <div class="envelope" id="envelope" role="button" tabindex="0" aria-label="Mở phong thư">
+      <div class="env-back"></div><div class="env-paper">💖🌸</div><div class="env-front"></div><div class="env-flap"></div>
+    </div>
+    <button class="big-button" id="openLetterBtn" type="button">Mở thư ngay nè 💌</button>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="brand">🌷 Tiệm lời chúc nhỏ</div>
+  <button class="pill" id="musicBtn" type="button" aria-pressed="false"><span class="music-note">♫</span><span id="musicLabel">Bật nhạc</span></button>
+</header>
+
+<main>
+  <section class="hero">
+    <span class="sparkle s1">✨</span><span class="sparkle s2">💖</span><span class="sparkle s3">⭐</span><span class="sparkle s4">🌸</span>
+    <div class="eyebrow">Một chiếc thiệp siêu xinh dành tặng bạn 💌</div>
+    <h1>Happy <span class="date">20/10</span><br>nèeee! 🎀</h1>
+    <p class="subtitle">Hôm nay là ngày của những bông hoa xinh đẹp. Chúc bạn luôn vui vẻ, rạng rỡ, gặp toàn chuyện tốt — và đặc biệt là <b>không bị deadline dí!</b> 🌷</p>
+    <div class="hero-art" aria-label="Hoa dễ thương"><span class="flower">🌷</span><span class="flower">🌼</span><span class="flower">🌸</span><span class="flower">🧸</span></div>
+  </section>
+
+  <section class="section">
+    <article class="card">
+      <h2>💗 Gửi những cô gái tuyệt vời</h2>
+      <p>Chúc bạn luôn có đủ tự tin để làm điều mình thích, đủ bình yên để ngủ ngon mỗi tối, đủ may mắn để gặp người tử tế và đủ tiền để thêm món đồ vào giỏ hàng mà không phải suy nghĩ 7749 lần. 😌✨</p>
+    </article>
+
+    <article class="card game">
+      <div class="game-head">
+        <div class="game-icon">🤔</div>
+        <div><h2>Kiểm tra độ đáng yêu</h2><p>Đây là bài kiểm tra cực kỳ nghiêm túc (nghiêm túc được 3 giây).</p></div>
+      </div>
+      <p class="question" id="question">Bạn có đồng ý rằng hôm nay mình xứng đáng được yêu thương và nhận quà không?</p>
+      <div class="answers" id="answers">
+        <button class="answer yes" id="yesBtn" type="button">Đồng ý chứ! 💅</button>
+        <button class="answer no" id="noBtn" type="button">Không đâu 🙈</button>
+      </div>
+      <div class="result" id="result" role="status" aria-live="polite"></div>
+    </article>
+
+    <article class="card quiz-card" id="quizCard">
+      <div class="game-head">
+        <div class="game-icon">🧠</div>
+        <div><h2>Quiz vui 20/10</h2><p>Trả lời 3 câu hỏi siêu dễ — sai cũng được, miễn vui là chính! 😆</p></div>
+      </div>
+      <div class="quiz-progress" aria-label="Tiến độ quiz"><span id="quizProgress"></span></div>
+      <p class="question" id="quizQuestion">Câu 1/3: Món quà tuyệt nhất hôm nay là gì?</p>
+      <div class="quiz-options" id="quizOptions">
+        <button class="quiz-option" type="button" data-answer="0">Một ngày vui vẻ 🌈</button>
+        <button class="quiz-option" type="button" data-answer="1">Bài tập thêm 📚</button>
+        <button class="quiz-option" type="button" data-answer="2">Deadline bất ngờ 🫠</button>
+        <button class="quiz-option" type="button" data-answer="3">Cả ba... không nha 😂</button>
+      </div>
+      <div class="quiz-feedback" id="quizFeedback" role="status" aria-live="polite"></div>
+      <button class="big-button quiz-next" id="quizNext" type="button" style="display:none">Câu tiếp theo ➜</button>
+    </article>
+
+
+    <div class="wishes">
+      <article class="wish"><div class="emoji">🌸</div><h3>Xinh đẹp theo cách riêng</h3><p>Mong bạn luôn yêu quý chính mình, vì bạn chẳng cần trở thành ai khác để thật đặc biệt.</p></article>
+      <article class="wish"><div class="emoji">🍀</div><h3>May mắn đầy túi</h3><p>Đi thi gặp đề tủ, đi chơi gặp trời đẹp, mở ví ra vẫn thấy tiền — amen! 🙏</p></article>
+      <article class="wish"><div class="emoji">🧋</div><h3>Niềm vui mỗi ngày</h3><p>Luôn có người lắng nghe, món ngon để ăn và một chiếc trà sữa đúng lúc.</p></article>
+    </div>
+
+    <div class="reveal-wrap">
+      <button class="big-button" id="surpriseBtn" type="button">Ấn vào đây nhận lời chúc bí mật 🎁</button>
+      <div class="secret" id="secret" aria-live="polite">
+        <div style="font-size:2.5rem">💐💖🌟</div>
+        <h2>Chúc mừng ngày 20/10!</h2>
+        Chúc bạn luôn được trân trọng, được lắng nghe và được sống thật vui với những điều mình yêu thích. Nếu hôm nay chưa ai tặng hoa thì hãy tự tặng mình một bông nhé — bạn xứng đáng mà! 🌷
+        <div style="margin-top:15px"><button class="pill" id="againBtn" type="button">Thêm pháo giấy! 🎉</button></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">Chúc mọi người có ngày 20/10 thật rực rỡ!</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const yesBtn = $('yesBtn'), noBtn = $('noBtn'), result = $('result');
+  const answers = $('answers'), toast = $('toast');
+  let toastTimer, audioCtx = null, masterGain = null, musicTimer = null, musicOn = false, noteIndex = 0;
+
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2400);
+  }
+
+  function confetti(count = 90) {
+    const colors = ['#ff8fb1','#b6a3ff','#8dd8ff','#ffe078','#a9e8c2','#ffb9d0'];
+    for (let i = 0; i < count; i++) {
+      const piece = document.createElement('i');
+      piece.className = 'confetti';
+      piece.style.left = Math.random() * 100 + 'vw';
+      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+      piece.style.animationDuration = (1.8 + Math.random() * 2.2) + 's';
+      piece.style.animationDelay = (Math.random() * .45) + 's';
+      piece.style.setProperty('--x', (Math.random() * 240 - 120) + 'px');
+      piece.style.transform = `rotate(${Math.random() * 180}deg)`;
+      document.body.appendChild(piece);
+      setTimeout(() => piece.remove(), 4700);
+    }
+  }
+
+  function floatDecor() {
+    const symbols = ['💗','🌸','✨','🌷','⭐','💖'];
+    const item = document.createElement('span');
+    item.className = 'floating';
+    item.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    item.style.left = Math.random() * 100 + 'vw';
+    item.style.fontSize = (16 + Math.random() * 22) + 'px';
+    item.style.animationDuration = (6 + Math.random() * 6) + 's';
+    item.style.setProperty('--drift', (Math.random() * 180 - 90) + 'px');
+    document.body.appendChild(item);
+    setTimeout(() => item.remove(), 13000);
+  }
+  setInterval(floatDecor, 850);
+
+  yesBtn.addEventListener('click', () => {
+    result.innerHTML = '✅ <b>Kết quả:</b> Chính xác! Bạn đạt 100/10 điểm đáng yêu. Phần thưởng gồm một lời chúc, một cái ôm online và quyền ăn món ngon hôm nay! 🏆💗';
+    result.classList.add('show');
+    confetti(100);
+    showToast('Phát hiện một người biết giá trị bản thân! 👑');
+  });
+
+  let dodgeCount = 0;
+  function dodgeNo() {
+    dodgeCount++;
+    const lines = [
+      'Ơ kìa, nút này hơi nhát! Thử bấm “Đồng ý” xem nào 😂',
+      'Nút “Không” đang xin nghỉ phép vì hôm nay là ngày vui! 🏃‍♀️',
+      'Hệ thống thông báo: bạn đáng yêu quá nên đáp án này bị từ chối 💖',
+      'Thôi đừng đuổi theo nữa, nhận lời chúc nèee! 🌷'
+    ];
+    if (dodgeCount < 4) {
+      const maxX = Math.max(0, Math.min(110, answers.clientWidth / 3));
+      noBtn.style.transform = `translate(${(Math.random() * 2 - 1) * maxX}px, ${(Math.random() * 2 - 1) * 18}px) rotate(${Math.random() * 14 - 7}deg)`;
+      showToast(lines[dodgeCount - 1]);
+    } else {
+      result.textContent = lines[3];
+      result.classList.add('show');
+      noBtn.textContent = 'Thôi được rồi 💗';
+      noBtn.style.transform = '';
+      noBtn.onclick = () => {
+        result.innerHTML = '💗 <b>Chốt đơn:</b> Bạn xứng đáng được yêu thương vào hôm nay và cả những ngày bình thường nữa!';
+        confetti(65);
+      };
+    }
+  }
+  noBtn.addEventListener('pointerenter', () => { if (window.matchMedia('(hover: hover) and (pointer: fine)').matches && dodgeCount < 4) dodgeNo(); });
+  noBtn.addEventListener('click', dodgeNo);
+  noBtn.addEventListener('touchstart', (event) => {
+    if (dodgeCount < 2) { event.preventDefault(); dodgeNo(); }
+  }, {passive:false});
+
+  $('surpriseBtn').addEventListener('click', () => {
+    $('secret').classList.add('show');
+    $('surpriseBtn').textContent = 'Bí mật đã được mở 💝';
+    $('surpriseBtn').disabled = true;
+    $('surpriseBtn').style.opacity = '.7';
+    confetti(120);
+    $('secret').scrollIntoView({behavior:'smooth', block:'center'});
+  });
+  $('againBtn').addEventListener('click', () => {
+    confetti(150);
+    showToast('Mưa pháo giấy phiên bản 20/10! 🎉');
+  });
+
+
+  // Màn hình phong thư mở đầu
+  const introScreen = $('introScreen');
+  const envelope = $('envelope');
+  let letterOpened = false;
+  function openLetter() {
+    if (letterOpened) return;
+    letterOpened = true;
+    envelope.classList.add('open');
+    $('openLetterBtn').textContent = 'Đang mở thư... 💗';
+    confetti(45);
+    setTimeout(() => {
+      introScreen.classList.add('closed');
+      showToast('Chào mừng đến với chiếc thiệp 20/10! 🌷');
+    }, 950);
+  }
+  $('openLetterBtn').addEventListener('click', openLetter);
+  envelope.addEventListener('click', openLetter);
+  envelope.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openLetter(); }
+  });
+
+  // Quiz 3 câu, chấm điểm và hiển thị danh hiệu cuối.
+  const quizData = [
+    {q:'Câu 1/3: Món quà tuyệt nhất hôm nay là gì?', options:['Một ngày vui vẻ 🌈','Bài tập thêm 📚','Deadline bất ngờ 🫠','Cả ba... không nha 😂'], correct:0, why:'Chuẩn luôn! Một ngày vui vẻ và được yêu thương là món quà đáng giá nhất. 💗'},
+    {q:'Câu 2/3: Nếu hôm nay chưa ai tặng hoa thì sao?', options:['Buồn cả tuần 😭','Tự mua hoa tặng mình 🌷','Đợi đến năm sau 🗓️','Gửi hóa đơn cho vũ trụ 🧾'], correct:1, why:'Đúng rồi! Tự chiều bản thân một chút cũng rất tuyệt. Bạn xứng đáng mà! 🌸'},
+    {q:'Câu 3/3: Điều gì nên có quanh năm, không chỉ ngày 20/10?', options:['Sự tôn trọng 💖','Deadline mỗi sáng 🫠','Bài kiểm tra bất ngờ 😵','Hết tiền cuối tháng 💸'], correct:0, why:'Chính xác! Sự quan tâm và tôn trọng luôn cần có mỗi ngày. ✨'}
+  ];
+  let quizIndex = 0, quizScore = 0, quizAnswered = false;
+  function renderQuiz() {
+    const item = quizData[quizIndex];
+    $('quizQuestion').textContent = item.q;
+    $('quizProgress').style.width = (quizIndex / quizData.length * 100) + '%';
+    $('quizFeedback').classList.remove('show');
+    $('quizFeedback').textContent = '';
+    $('quizNext').style.display = 'none';
+    $('quizNext').textContent = quizIndex === quizData.length - 1 ? 'Xem kết quả 🎉' : 'Câu tiếp theo ➜';
+    $('quizOptions').innerHTML = item.options.map((option, index) => `<button class="quiz-option" type="button" data-answer="${index}">${option}</button>`).join('');
+    quizAnswered = false;
+    $('quizOptions').querySelectorAll('button').forEach(button => {
+      button.addEventListener('click', () => {
+        if (quizAnswered) return;
+        quizAnswered = true;
+        const chosen = Number(button.dataset.answer);
+        if (chosen === item.correct) quizScore++;
+        $('quizOptions').querySelectorAll('button').forEach((b, i) => {
+          b.disabled = true;
+          if (i === item.correct) { b.style.borderColor = '#8dd8ac'; b.style.background = '#effff4'; }
+          else if (i === chosen) { b.style.borderColor = '#ffb0c8'; b.style.background = '#fff0f5'; }
+        });
+        $('quizFeedback').textContent = (chosen === item.correct ? '✅ Chính xác! ' : '🙈 Chưa đúng rồi! ') + item.why;
+        $('quizFeedback').classList.add('show');
+        $('quizProgress').style.width = ((quizIndex + 1) / quizData.length * 100) + '%';
+        $('quizNext').style.display = 'inline-block';
+      });
+    });
+  }
+  $('quizNext').addEventListener('click', () => {
+    if (!quizAnswered) return;
+    if (quizIndex < quizData.length - 1) {
+      quizIndex++;
+      renderQuiz();
+    } else {
+      const title = quizScore === 3 ? '👑 Nữ hoàng 20/10 siêu tinh tế!' : quizScore === 2 ? '🌷 Chuyên gia lan tỏa niềm vui!' : '🧸 Đại sứ đáng yêu của ngày hôm nay!';
+      $('quizQuestion').textContent = 'Hoàn thành quiz rồi! Bạn đạt ' + quizScore + '/3 điểm.';
+      $('quizOptions').innerHTML = '';
+      $('quizFeedback').innerHTML = `<b>${title}</b><br>Dù được bao nhiêu điểm thì bạn vẫn xứng đáng được yêu thương và có một ngày thật vui. 💖`;
+      $('quizFeedback').classList.add('show');
+      $('quizProgress').style.width = '100%';
+      $('quizNext').textContent = 'Chơi lại 🔄';
+      $('quizNext').onclick = () => {
+        quizIndex = 0; quizScore = 0;
+        $('quizNext').onclick = null;
+        renderQuiz();
+      };
+      confetti(75);
+    }
+  });
+  renderQuiz();
+
+  // Nhạc nền tự tạo bằng Web Audio API, không cần tải file nhạc ngoài.
+  const melody = [523.25,659.25,783.99,659.25,587.33,698.46,880,698.46,523.25,587.33,659.25,523.25];
+  function playNote(freq, start, duration) {
+    if (!audioCtx || !masterGain) return;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, start);
+    gain.gain.setValueAtTime(0.0001, start);
+    gain.gain.exponentialRampToValueAtTime(0.075, start + .025);
+    gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
+    osc.connect(gain); gain.connect(masterGain);
+    osc.start(start); osc.stop(start + duration + .03);
+  }
+  function scheduleMelody() {
+    if (!musicOn || !audioCtx) return;
+    const now = audioCtx.currentTime;
+    for (let i = 0; i < 4; i++) {
+      const idx = noteIndex % melody.length;
+      playNote(melody[idx], now + i * .28, .23);
+      noteIndex++;
+    }
+    musicTimer = setTimeout(scheduleMelody, 1050);
+  }
+  async function toggleMusic() {
+    if (!musicOn) {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) { showToast('Trình duyệt này chưa hỗ trợ nhạc nền 😢'); return; }
+        if (!audioCtx) {
+          audioCtx = new AudioContext();
+          masterGain = audioCtx.createGain();
+          masterGain.gain.value = .35;
+          masterGain.connect(audioCtx.destination);
+        }
+        await audioCtx.resume();
+        musicOn = true;
+        $('musicBtn').setAttribute('aria-pressed', 'true');
+        $('musicLabel').textContent = 'Tắt nhạc';
+        $('musicBtn').style.background = '#e8e0ff';
+        scheduleMelody();
+        showToast('Nhạc nền dễ thương đã bật 🎶');
+      } catch (e) { showToast('Không bật được nhạc; hãy thử nhấn lại nhé.'); }
+    } else {
+      musicOn = false;
+      clearTimeout(musicTimer);
+      if (masterGain && audioCtx) {
+        masterGain.gain.setTargetAtTime(0, audioCtx.currentTime, .04);
+        setTimeout(() => {
+          if (!musicOn && masterGain && audioCtx) masterGain.gain.setTargetAtTime(.35, audioCtx.currentTime, .04);
+        }, 150);
+      }
+      $('musicBtn').setAttribute('aria-pressed', 'false');
+      $('musicLabel').textContent = 'Bật nhạc';
+      $('musicBtn').style.background = '';
+      showToast('Đã tắt nhạc nền 🔇');
+    }
+  }
+  $('musicBtn').addEventListener('click', toggleMusic);
+})();
+</script>
+</body>
+</html>
